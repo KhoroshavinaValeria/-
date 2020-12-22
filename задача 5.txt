@@ -1,0 +1,46 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, x, y, z;
+    cin>>n;
+    x=10000000;
+    y=10000000;
+    z=10000000;
+    float a[n];
+    
+    for (int i=1; i<n+1; i++)
+    {
+        cout<<"a["<<i<<"]=";
+        cin>>a[i];
+    }
+    
+    for (int i=1; i<n+1; i++)
+    {
+        if (a[i]<x)
+        {
+            x=a[i];
+        }
+    }
+    for (int i=1; i<n+1; i++)
+    {
+        if ((a[i]<y)&&(a[i]!=x))
+        {
+            y=a[i];
+        }
+    }
+    for (int i=1; i<n+1; i++)
+    {
+        if ((a[i]<z)&&(a[i]!=x)&&(a[i]!=y))
+        {
+            z=a[i];
+        }
+    }
+    
+    cout<<"Три наименьших элемента массива в порядке возрастания "<<x<<" "<<y<<" "<<z;
+        
+}

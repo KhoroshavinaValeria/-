@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string s;
+    char w;
+    int kmin, kmax, q, b;
+    
+    cout<<"¬ведите строку ";
+    cin>>s;
+    kmin=10000;
+    kmax=0;
+    q=0;
+    b=0;
+    w=' ';
+    
+    for (int i=0; i<(s.length()); i++)
+    {
+        if ((int)s[i]<kmin)
+        {
+            kmin=(int)s[i];
+            q=i;
+        }
+        if ((int)s[i]>kmax)
+        {
+            kmax=(int)s[i];
+            b=i;
+        }
+    }
+    for (int i=0; i<(s.length()); i++)
+    {
+        w=s[q];
+            s[q]=s[b];
+            s[b]=w;
+    
+        
+    }
+    
+    for (int i=0; i<(s.length()); i++)
+    {
+        cout<<s[i];
+    }
+}
